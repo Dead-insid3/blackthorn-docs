@@ -19,8 +19,8 @@ export default defineConfig({
           items: [ 
           { label: 'Avisos Importantes', link: '/regras/' },
           { label: 'Regras Gerais', link: '/regras/geral/'},
-          { label: 'Regras Discord', link: '/regras/geral/discord/'},
           { label: 'Regras de Roleplay', link: '/regras/geral/roleplay/'},
+          { label: 'Regras Discord', link: '/regras/geral/discord/'},
           { label: 'Regras para PEDs e RP de Animais', link: '/regras/geral/peds/'},
           { label: 'Regras para Streamers e Influencers', link: '/regras/geral/streamers/'},
            ] },

@@ -1,71 +1,329 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  --sl-color-bg: #050505;
-  --sl-color-bg-nav: #000000;
-  --sl-color-text-accent: #4700a3;
-  --sl-color-accent-low: #25003a;
-  --sl-color-accent: #9900ff;
-  --sl-color-accent-high: #9a4dff;
-  --sl-color-white: #e0e0e0;
-  --sl-color-gray-1: #b3b3b3;
-  --sl-color-gray-2: #808080;
-  --sl-color-gray-3: #4d4d4d;
-  --sl-color-gray-4: #262626;
-  --sl-color-gray-5: #141414;
-  --sl-color-gray-6: #0a0a0a;
+  --sl-color-bg: #050507;
+  --sl-color-bg-nav: rgba(5, 5, 7, 0.92);
+
+  --sl-color-white: #eee8f6;
+  --sl-color-gray-1: #c9c1d3;
+  --sl-color-gray-2: #9c92a8;
+  --sl-color-gray-3: #6f647b;
+  --sl-color-gray-4: #342b3d;
+  --sl-color-gray-5: #18131f;
+  --sl-color-gray-6: #0c0910;
+
+  --sl-color-text-accent: #b985ff;
+  --sl-color-accent-low: #20102f;
+  --sl-color-accent: #8b3df2;
+  --sl-color-accent-high: #d9c0ff;
+
+  --bt-bg: #050507;
+  --bt-card: rgba(17, 12, 23, 0.78);
+  --bt-card-hover: rgba(25, 17, 34, 0.9);
+  --bt-border: rgba(185, 133, 255, 0.18);
+  --bt-border-hover: rgba(185, 133, 255, 0.38);
+  --bt-purple: #8b3df2;
+  --bt-purple-soft: #b985ff;
+  --bt-red-soft: rgba(120, 20, 38, 0.22);
 }
 
-h1, h2, h3, .site-title {
-  font-family: 'Cinzel', serif !important;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 10px rgba(90, 0, 163, 0.4);
-  letter-spacing: 2px;
+/* Base */
+
+html {
+  background: var(--bt-bg);
+  overflow-x: hidden;
 }
 
-[data-has-hero] {
+body {
   position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: transparent !important;
+  color: var(--sl-color-white);
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-[data-has-hero]::before {
+/* Fundo fixo */
+
+body::before {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 1) 90%), url('/fundo-cidade.webp');
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(5, 5, 7, 0.28) 0%,
+      rgba(5, 5, 7, 0.76) 52%,
+      rgba(5, 5, 7, 0.98) 100%
+    ),
+    radial-gradient(
+      circle at 30% 10%,
+      rgba(139, 61, 242, 0.20),
+      transparent 34rem
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(120, 20, 38, 0.20),
+      transparent 32rem
+    ),
+    url('/fundo-cidade.jpeg');
+
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  z-index: -1;
-  pointer-events: none;
 }
 
+/* Evita que painéis cubram totalmente o fundo */
+
+.page,
+main,
+.content-panel,
+.main-pane {
+  background: transparent !important;
+}
+
+/* Cabeçalho e menus */
+
+.header {
+  background: rgba(5, 5, 7, 0.82) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(185, 133, 255, 0.12) !important;
+}
+
+.sidebar-pane {
+  background: rgba(5, 5, 7, 0.86) !important;
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(185, 133, 255, 0.10) !important;
+}
+
+.right-sidebar {
+  background: transparent !important;
+  border-left: 1px solid rgba(185, 133, 255, 0.08) !important;
+}
+
+/* Títulos */
+
+h1,
+h2,
+h3,
+.site-title {
+  font-family: 'Cinzel', serif !important;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  color: #f4edff;
+  text-shadow: 0 0 18px rgba(139, 61, 242, 0.28);
+}
+
+h2 {
+  color: #e2d2f5;
+  border-bottom: 1px solid rgba(185, 133, 255, 0.16);
+  padding-bottom: 0.35rem;
+}
+
+h3 {
+  color: #d2baf0;
+}
+
+/* Texto */
+
+p,
+li {
+  color: #d5cedd;
+  line-height: 1.75;
+}
+
+strong {
+  color: #f0e8ff;
+}
+
+/* Links */
+
+a {
+  color: var(--bt-purple-soft);
+  text-decoration-color: rgba(185, 133, 255, 0.38);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: #dac4ff;
+  text-decoration-color: #dac4ff;
+}
+
+/* Sidebar */
+
+.sidebar-content summary {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #eee8f6;
+}
+
+.sidebar-content a {
+  border-radius: 0.5rem;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.sidebar-content a:hover {
+  background: rgba(139, 61, 242, 0.12);
+  color: #ffffff !important;
+}
+
+.sidebar-content a[aria-current='page'] {
+  background: linear-gradient(90deg, rgba(139, 61, 242, 0.72), rgba(88, 26, 150, 0.66));
+  color: #ffffff !important;
+}
+
+/* Botões */
+
 div.actions a {
-  transition: all 0.3s ease-in-out !important;
+  border-radius: 0.65rem !important;
+  border: 1px solid rgba(185, 133, 255, 0.28) !important;
+  background: rgba(139, 61, 242, 0.82) !important;
+  box-shadow: 0 0 20px rgba(139, 61, 242, 0.18) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease !important;
 }
 
 div.actions a:hover {
-  transform: scale(1.1) !important;
-  box-shadow: 0 0 25px var(--sl-color-accent) !important;
-  filter: brightness(1.2);
+  transform: translateY(-2px) !important;
+  filter: brightness(1.08);
+  box-shadow: 0 0 24px rgba(185, 133, 255, 0.26) !important;
 }
 
+/* Cards */
+
 .sl-link-card {
-  transition: all 0.3s ease-in-out !important;
+  position: relative;
+  border: 1px solid var(--bt-border) !important;
+  border-radius: 0.9rem !important;
+  background: var(--bt-card) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24) !important;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease !important;
 }
 
 .sl-link-card:hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 0 25px var(--sl-color-accent) !important;
-  filter: brightness(1.2) !important;
-  border-color: var(--sl-color-accent) !important;
+  transform: translateY(-3px) !important;
+  border-color: var(--bt-border-hover) !important;
+  background: var(--bt-card-hover) !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32) !important;
 }
 
-/* Cria o efeito de espelhamento */
+.sl-link-card .title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.04em;
+  color: #f2eaff;
+}
+
+.sl-link-card .description {
+  color: #c4b9ce;
+}
+
+/* Blocos de aviso */
+
+.starlight-aside {
+  border-radius: 0.85rem !important;
+  border: 1px solid rgba(185, 133, 255, 0.18) !important;
+  background: rgba(17, 12, 23, 0.78) !important;
+  backdrop-filter: blur(8px);
+}
+
+.starlight-aside--danger {
+  border-color: rgba(190, 48, 76, 0.38) !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(70, 8, 22, 0.72),
+      rgba(17, 12, 23, 0.84)
+    ) !important;
+}
+
+.starlight-aside--caution,
+.starlight-aside--warning {
+  border-color: rgba(220, 170, 90, 0.34) !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(64, 42, 14, 0.58),
+      rgba(17, 12, 23, 0.84)
+    ) !important;
+}
+
+.starlight-aside--note,
+.starlight-aside--tip {
+  border-color: rgba(185, 133, 255, 0.24) !important;
+}
+
+/* Código */
+
+code {
+  border-radius: 0.35rem;
+  background: rgba(139, 61, 242, 0.12);
+  color: #e4d4ff;
+}
+
+pre {
+  border-radius: 0.85rem;
+  border: 1px solid rgba(185, 133, 255, 0.14);
+  background: rgba(8, 6, 11, 0.88) !important;
+}
+
+/* Tabelas */
+
+table {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(185, 133, 255, 0.14);
+}
+
+th {
+  background: rgba(139, 61, 242, 0.16);
+  color: #f4edff;
+}
+
+td {
+  background: rgba(12, 9, 16, 0.58);
+}
+
+/* Scrollbar discreta */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d1a43;
+  border-radius: 999px;
+  border: 2px solid #050507;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5d2ca0;
+}
+
+/* Seleção */
+
+::selection {
+  background: rgba(185, 133, 255, 0.36);
+  color: #ffffff;
+}
+
+/* Efeito de espelhamento */
+
 .inverter-r {
   display: inline-block;
   transform: scaleX(-1);
-  margin: 0 -2px; /* Ajuste para as letras não ficarem grudadas */
+  margin: 0 -2px;
 }
