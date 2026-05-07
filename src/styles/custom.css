@@ -3,10 +3,10 @@
 :root {
   --sl-color-bg: #050505;
   --sl-color-bg-nav: #000000;
-  --sl-color-text-accent: #a30000;
-  --sl-color-accent-low: #3a0000;
-  --sl-color-accent: #ff0000;
-  --sl-color-accent-high: #ff4d4d;
+  --sl-color-text-accent: #4700a3;
+  --sl-color-accent-low: #25003a;
+  --sl-color-accent: #9900ff;
+  --sl-color-accent-high: #9a4dff;
   --sl-color-white: #e0e0e0;
   --sl-color-gray-1: #b3b3b3;
   --sl-color-gray-2: #808080;
@@ -19,7 +19,7 @@
 h1, h2, h3, .site-title {
   font-family: 'Cinzel', serif !important;
   text-transform: uppercase;
-  text-shadow: 2px 2px 10px rgba(163, 0, 0, 0.4);
+  text-shadow: 2px 2px 10px rgba(90, 0, 163, 0.4);
   letter-spacing: 2px;
 }
 
@@ -61,4 +61,11 @@ div.actions a:hover {
   box-shadow: 0 0 25px var(--sl-color-accent) !important;
   filter: brightness(1.2) !important;
   border-color: var(--sl-color-accent) !important;
+}
+
+/* Cria o efeito de espelhamento */
+.inverter-r {
+  display: inline-block;
+  transform: scaleX(-1);
+  margin: 0 -2px; /* Ajuste para as letras não ficarem grudadas */
 }

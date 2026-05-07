@@ -2,6 +2,7 @@
 title: Doações e Itens Exclusivos
 description: Regras para inserção de arquivos personalizados, termos de doação e diretrizes para itens exclusivos.
 ---
+
 **Opa! Dado é Dado, hein!?**
 
 Para manter a performance da cidade e a exclusividade de cada cidadão, seguimos diretrizes técnicas rigorosas para a inserção de arquivos externos. Leia atentamente antes de realizar qualquer envio.

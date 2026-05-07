@@ -9,18 +9,31 @@ export default defineConfig({
         './src/styles/custom.css',
       ],
       sidebar: [
-        { label: 'Bem Vindo (a) !', link: '/' },
-        {
-          label: 'BLACKTHORN ESSENTIALS',
+        { label: 'Índice', link: '/indice/' },
+        { label: 'LORE',
           items: [
-            { label: 'Lore', link: '/lore/historia/' },
-            { label: 'Regras', link: '/regras/' },
+           { label: 'Fundação', link: '/lore/historia/fundacao/' },
+          ] 
+        },
+        { label: 'REGRAS GERAIS',
+          items: [ 
+          { label: 'Avisos Importantes', link: '/regras/' },
+          { label: 'Regras Gerais', link: '/regras/geral/'},
+          { label: 'Regras Discord', link: '/regras/geral/discord/'},
+          { label: 'Regras de Roleplay', link: '/regras/geral/roleplay/'},
+          { label: 'Regras para PEDs e RP de Animais', link: '/regras/geral/peds/'},
+          { label: 'Regras para Streamers e Influencers', link: '/regras/geral/streamers/'},
+           ] },
+        {
+          label: 'REGRAS ESPECÍFICAS',
+          items: [        
+            { label: 'Hospital', link: '/regras/hospital/' },
+            { label: 'Polícia', link: '/regras/policia/' },
+            { label: 'Eventos', link: '/regras/eventos/' },
+            { label: 'Doações & Exclusivos', link: '/regras/doacoes/' },
+            
           ],
         },
-        { label: 'Hospital', link: '/regras/hospital/' },
-        { label: 'Polícia', link: '/regras/policia/' },
-        { label: 'Eventos', link: '/regras/eventos/' },
-        { label: 'Doações & Exclusivos', link: '/regras/doacoes/' },
       ],
     }),
   ],
