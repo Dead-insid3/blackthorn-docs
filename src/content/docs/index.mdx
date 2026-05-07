@@ -1,0 +1,40 @@
+---
+title: Blackthorn Valley
+description: Bem-vindo às sombras do Vale. Documentação oficial e diretrizes da cidade.
+template: splash
+hero:
+  tagline: Onde a civilização termina e a verdadeira sobrevivência começa. Conheça as leis de ferro que regem as ruas e os mistérios que habitam a escuridão.
+  actions:
+    - text: Consultar a Lore
+      link: /lore/historia/
+      icon: open-book
+      variant: secondary
+    - text: Ler as Regras
+      link: /regras/
+      icon: right-arrow
+      variant: primary
+    - text: Entrar no Discord
+      link: https://discord.gg/4ga2TpBMhx
+      icon: discord
+      variant: secondary
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <LinkCard
+    title="A nossa História"
+    description="Explore os segredos da fundação e descubra quem realmente dita as regras nas sombras do Vale."
+    href="/lore/historia/"
+  />
+  <LinkCard
+    title="Regras Gerais"
+    description="Manual Basico para sua Sobrevivência (e seu passaporte) na nossa Cidade."
+    href="/regras/"
+  />
+  <LinkCard
+    title="Comunidade no Discord"
+    description="Realize a Whitelist e junte-se a nós em uma Cidade feita de Players para Players"
+    href="https://discord.gg/4ga2TpBMhx"
+  />
+</CardGrid>
